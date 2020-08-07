@@ -12,26 +12,39 @@ import { Ubicacion } from '../../models/ubicacion';
 })
 export class MapaEmpresaComponent implements OnInit {
 
+   //marker
+ coordinates: number[];
+ color = '#3887be';
+ estadoMarker:boolean=false;
+ markerInicial:number[];
+ long:number=-77.081366;
+ lat:number=-12.058501;
+
+
   constructor(
    private mapaService:ServiceMapaService
   ) { }
 
   ngOnInit(): void {
+
+     //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
+   this.mapaService.ubicacion.longitud=this.long;
+   this.mapaService.ubicacion.latitud=this.lat;
+
   }
 
- //marker
- coordinates: number[];
- color = '#3887be';
- estadoMarker:boolean=false;
- markerInicial:number[];
- long:number=-77.0824914;
- lat:number=-12.0587117;
 
+   
  crearEliminarMarker() {
   if(!this.estadoMarker){
    this.estadoMarker=true;
    //ASIGNA LA POSICION DEL MARKER
    this.markerInicial=[this.long,this.lat];
+
+
+   //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
+   this.mapaService.ubicacion.longitud=this.long;
+   this.mapaService.ubicacion.latitud=this.lat;
    
  }else{
    this.estadoMarker=false;
@@ -46,7 +59,14 @@ export class MapaEmpresaComponent implements OnInit {
      //REASIGNA LAS POSICION DEL MARCADOR
      this.long=resultado.result.geometry.coordinates[0];
      this.lat=resultado.result.geometry.coordinates[1];
+
+
+
  
+     //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
+   this.mapaService.ubicacion.longitud=this.long;
+   this.mapaService.ubicacion.latitud=this.lat;
+
  }
 
  onGeolocate(position: Position) {
@@ -54,6 +74,12 @@ export class MapaEmpresaComponent implements OnInit {
    //REASIGNA LAS POSICION DEL MARCADOR
    this.long=position.coords.longitude;
    this.lat=position.coords.latitude;
+
+
+
+   //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
+   this.mapaService.ubicacion.longitud=this.long;
+   this.mapaService.ubicacion.latitud=this.lat;
    
  }
 
@@ -64,9 +90,10 @@ export class MapaEmpresaComponent implements OnInit {
    this.coordinates = marker.getLngLat().toArray();
    console.log('coordenadas marker:',  this.coordinates);
    
-   
-  console.log(this.mapaService.ubicacion);
-  //GUARDAAR UBICACION EN EL SERVICIO
+
+
+
+  //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
    this.mapaService.ubicacion.longitud=this.coordinates[0];
    this.mapaService.ubicacion.latitud=this.coordinates[1];
 
