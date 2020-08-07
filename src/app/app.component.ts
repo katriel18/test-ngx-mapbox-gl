@@ -10,10 +10,9 @@ import { ServiceEmpresaService } from './services/service-empresa.service';
 export class AppComponent {
   empresas:Empresa[];
   constructor(
-   // private empresasService:ServiceEmpresaService
+  public empresasService:ServiceEmpresaService
   ) { }
   OnInit(){
-   // this.empresas=this.empresasService.empresas;
   }
 
 }

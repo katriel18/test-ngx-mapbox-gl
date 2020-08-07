@@ -1,4 +1,4 @@
 export class Ubicacion {
     longitud:number;
-    latitud;
+    latitud:number
 }

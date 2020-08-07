@@ -13,7 +13,7 @@ import { Ubicacion } from '../../models/ubicacion';
 export class MapaEmpresaComponent implements OnInit {
 
   constructor(
-   // private mapaService:ServiceMapaService
+   private mapaService:ServiceMapaService
   ) { }
 
   ngOnInit(): void {
@@ -65,10 +65,10 @@ export class MapaEmpresaComponent implements OnInit {
    console.log('coordenadas marker:',  this.coordinates);
    
    
-   /*
+  console.log(this.mapaService.ubicacion);
   //GUARDAAR UBICACION EN EL SERVICIO
-   this.mapaService.ubicacion.latitud=this.coordinates[0];
-   this.mapaService.ubicacion.latitud=this.coordinates[1];*/
+   this.mapaService.ubicacion.longitud=this.coordinates[0];
+   this.mapaService.ubicacion.latitud=this.coordinates[1];
 
  }
  
