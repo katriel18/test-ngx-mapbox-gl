@@ -5,7 +5,7 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root'
 })
 export class ServiceClienteService {
-
+  codigo:number=0;
   clientes: Cliente[] = [];
   constructor() { }
 
@@ -14,6 +14,8 @@ export class ServiceClienteService {
   agregarCliente(cliente: Cliente) {
 
     this.clientes.push(cliente);
+    this.codigo++;
+    
 
   }
 

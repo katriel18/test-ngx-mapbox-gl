@@ -7,5 +7,10 @@
 <br>
 <span *ngFor="let i of empresasService.empresas">
     <br>
-   <span>{{i.id }}</span> <span>{{i.nombre }}</span> <span>{{i.ubicacion.longitud }}</span><span>{{i.ubicacion.latitud}}</span>
+   <span>{{i.id }}</span> <span>{{i.nombre }}</span> <span>{{i.ubicacion.longitud }},</span><span>{{i.ubicacion.latitud}}</span>
+</span>
+<br>
+<span *ngFor="let i of clienteService.clientes">
+    <br>
+   <span>{{i.id }}</span> <span>{{i.nombre }}</span> <span>{{i.ubicacion.longitud }},</span><span>{{i.ubicacion.latitud}}</span>
 </span>

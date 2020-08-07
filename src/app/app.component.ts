@@ -2,6 +2,7 @@ import { Empresa } from './models/empresa';
 import { Component, OnInit } from '@angular/core';
 
 import { ServiceEmpresaService } from './services/service-empresa.service';
+import { ServiceClienteService } from './services/service-cliente.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +11,8 @@ import { ServiceEmpresaService } from './services/service-empresa.service';
 export class AppComponent {
   empresas:Empresa[];
   constructor(
-  public empresasService:ServiceEmpresaService
+  public empresasService:ServiceEmpresaService,
+  public clienteService:ServiceClienteService
   ) { }
   OnInit(){
   }
