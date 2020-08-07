@@ -12,29 +12,26 @@ import { Ubicacion } from '../../models/ubicacion';
 export class EmpresaComponent implements OnInit {
 
   constructor(
-    private mapaService:ServiceMapaService,
-    private empresaService:ServiceEmpresaService
+    private mapaService: ServiceMapaService,
+    private empresaService: ServiceEmpresaService
   ) { }
 
   ngOnInit(): void {
   }
 
 
-  crearEmpresa()
+  crearEmpresa() {
+    var empresaTemp: Empresa = new Empresa();
+    var ubicacionTemp: Ubicacion = new Ubicacion();
 
-  {
-    var empresaTemp:Empresa=new Empresa();
-    var ubicacionTemp:Ubicacion=new Ubicacion();
+    empresaTemp.id = this.empresaService.codigo;
+    empresaTemp.nombre = 'empresa ' + this.empresaService.codigo;
 
-    empresaTemp.id=this.empresaService.codigo;
-    empresaTemp.nombre='empresa '+this.empresaService.codigo;
+    //ASIGNACION DE LA UBICACION DEL SERVICIO//NO ASIGNAR DIRECTAMENTE LA UBICACION SI NO SE ACTUALIZA TODAS LAS EMPRESAS
+    ubicacionTemp.longitud = this.mapaService.ubicacion.longitud;
+    ubicacionTemp.latitud = this.mapaService.ubicacion.latitud;
 
-   // ubicacionTemp=  this.mapaService.ubicacion;
-//empresaTemp.ubicacion=ubicacionTemp;
-
-ubicacionTemp.longitud=this.mapaService.ubicacion.longitud;
-ubicacionTemp.latitud=this.mapaService.ubicacion.latitud;
-empresaTemp.ubicacion=ubicacionTemp;
+    empresaTemp.ubicacion = ubicacionTemp;
 
     this.empresaService.agregarEmpresa(empresaTemp);
     console.log(empresaTemp);
