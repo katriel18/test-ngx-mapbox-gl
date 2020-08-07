@@ -5,15 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServiceEmpresaService {
-
+  codigo:number=0;
   empresas: Empresa[] = [];
   constructor() { }
 
 
 
   agregarEmpresa(empresa: Empresa) {
-
+    
     this.empresas.push(empresa);
+    this.codigo++;
 
   }
 

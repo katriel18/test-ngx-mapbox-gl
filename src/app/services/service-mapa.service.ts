@@ -7,7 +7,7 @@ import { Ubicacion } from '../models/ubicacion';
 export class ServiceMapaService {
 
   
-  ubicacion: Ubicacion;
+  ubicacion=new Ubicacion();
   constructor() { }
 
   capturarUbicacion(data:any){

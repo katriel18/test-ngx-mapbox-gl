@@ -5,19 +5,19 @@ import { AppComponent } from './app.component';
 
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { AppRoutingModule } from './app-routing.module';
-import { EmpresaComponent } from './components/empresa/empresa.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { MapaClienteComponent } from './maps/mapa-cliente/mapa-cliente.component';
 import { MapaEmpresaComponent } from './maps/mapa-empresa/mapa-empresa.component';
 import { MapaComponent } from './maps/mapa/mapa.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EmpresaComponent,
     ClienteComponent,
     MapaClienteComponent,
     MapaEmpresaComponent,
-    MapaComponent
+    MapaComponent,
+    EmpresaComponent
   ],
   imports: [
     BrowserModule,
