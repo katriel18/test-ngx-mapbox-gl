@@ -2,6 +2,7 @@ import { Component, OnInit ,NgZone} from '@angular/core';
 
 import { Marker } from 'mapbox-gl';
 import { Result, Results } from 'ngx-mapbox-gl/lib/control/geocoder-control.directive';
+import { ServiceEmpresaService } from '../../services/service-empresa.service';
 
 @Component({
   selector: 'app-mapa',
@@ -10,7 +11,9 @@ import { Result, Results } from 'ngx-mapbox-gl/lib/control/geocoder-control.dire
 })
 export class MapaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public empresaService:ServiceEmpresaService
+  ) { }
 
   ngOnInit(): void {
   }

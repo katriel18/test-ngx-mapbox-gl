@@ -11,11 +11,19 @@
       </button>
     </mgl-control>
 
-    <!--MARKER-->
+    <!--MARKER CLIENTE-->
     <mgl-marker *ngIf="estadoMarker" [lngLat]="markerInicial" [draggable]="true" (dragEnd)="onDragEnd($event)"></mgl-marker>
-    <!--END MARKER-->
+    <!--END MARKER CLIENTE-->
 
 
+    <!--MARKER EMPRESAS-->
+
+    <mgl-marker *ngFor="let i of empresaService.empresas" [lngLat]="[i.ubicacion.longitud,i.ubicacion.latitud]">
+
+
+    </mgl-marker>
+
+    <!--END MARKER EMPRESAS-->
 
 
 
