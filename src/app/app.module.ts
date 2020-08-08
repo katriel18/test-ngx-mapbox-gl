@@ -10,6 +10,7 @@ import { MapaClienteComponent } from './maps/mapa-cliente/mapa-cliente.component
 import { MapaEmpresaComponent } from './maps/mapa-empresa/mapa-empresa.component';
 import { MapaComponent } from './maps/mapa/mapa.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
+import { MapaVisualComponent } from './maps/mapa-visual/mapa-visual.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
     MapaClienteComponent,
     MapaEmpresaComponent,
     MapaComponent,
-    EmpresaComponent
+    EmpresaComponent,
+    MapaVisualComponent
   ],
   imports: [
     BrowserModule,

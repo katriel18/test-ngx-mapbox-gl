@@ -10,7 +10,7 @@ import { ServiceEmpresaService } from '../../services/service-empresa.service';
   styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent implements OnInit {
-
+  
   constructor(
     public empresaService:ServiceEmpresaService
   ) { }
@@ -25,6 +25,7 @@ export class MapaComponent implements OnInit {
  markerInicial:number[];
  long:number=-77.0824914;
  lat:number=-12.0587117;
+
 
  crearEliminarMarker() {
   if(!this.estadoMarker){

@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
-import { MapaComponent } from './maps/mapa/mapa.component';
+import { MapaVisualComponent } from './maps/mapa-visual/mapa-visual.component';
 const routes: Routes = [
   
-  { path: 'mapa', component: MapaComponent },
+  { path: 'mapa-visual', component: MapaVisualComponent },
   { path: 'cliente', component: ClienteComponent },
   { path: 'empresa', component: EmpresaComponent },
   
-  { path: '', redirectTo: '/cliente', pathMatch: 'full' },
+  { path: '', redirectTo: '/mapa-visual', pathMatch: 'full' },
 ];
 
 
