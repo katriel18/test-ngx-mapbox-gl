@@ -3,3 +3,10 @@ mgl-map {
     width: 50%;
     background-color: chartreuse;
 }
+
+.marker {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
