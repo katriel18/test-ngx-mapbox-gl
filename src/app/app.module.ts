@@ -11,6 +11,9 @@ import { MapaEmpresaComponent } from './maps/mapa-empresa/mapa-empresa.component
 import { MapaComponent } from './maps/mapa/mapa.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
 import { MapaVisualComponent } from './maps/mapa-visual/mapa-visual.component';
+
+
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,9 @@ import { MapaVisualComponent } from './maps/mapa-visual/mapa-visual.component';
       geocoderAccessToken: 'pk.eyJ1Ijoia2F0cmllbCIsImEiOiJja2RjOXlrZTUxM3RsMnlxcmtwd3NrZWMwIn0.buu1mRI4DLdAUacSHR_2gw' // Optional, specify if different from the map access token, can also be set per mgl-geocoder (accessToken input of mgl-geocoder)
     }),
 
-    AppRoutingModule
+    AppRoutingModule,
+
+    HttpClientModule,
    
   ],
   providers: [],

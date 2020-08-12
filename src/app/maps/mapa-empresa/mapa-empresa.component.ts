@@ -1,9 +1,7 @@
 import { Component, OnInit ,NgZone} from '@angular/core';
 
-import { Marker } from 'mapbox-gl';
-import { Result, Results } from 'ngx-mapbox-gl/lib/control/geocoder-control.directive';
+import { Marker} from 'mapbox-gl';
 import { ServiceMapaService } from '../../services/service-mapa.service';
-import { Ubicacion } from '../../models/ubicacion';
 
 @Component({
   selector: 'app-mapa-empresa',
@@ -20,7 +18,6 @@ export class MapaEmpresaComponent implements OnInit {
  long:number=-77.081366;
  lat:number=-12.058501;
 
-
   constructor(
    private mapaService:ServiceMapaService
   ) { }
@@ -31,6 +28,7 @@ export class MapaEmpresaComponent implements OnInit {
    this.mapaService.ubicacion.longitud=this.long;
    this.mapaService.ubicacion.latitud=this.lat;
 
+  
   }
 
 
@@ -70,9 +68,10 @@ export class MapaEmpresaComponent implements OnInit {
  }
 
  onGeolocate(position: Position) {
-   console.log('coordenandas mias: ', position.coords);
+  console.log('coordenandas mias: ', position.coords);
+  
    //REASIGNA LAS POSICION DEL MARCADOR
-   this.long=position.coords.longitude;
+  this.long=position.coords.longitude;
    this.lat=position.coords.latitude;
 
 
@@ -90,15 +89,26 @@ export class MapaEmpresaComponent implements OnInit {
    this.coordinates = marker.getLngLat().toArray();
    console.log('coordenadas marker:',  this.coordinates);
    
-
-
-
   //ACTUALIZAR UBICACION EN EL SERVICIO DE MAPA
    this.mapaService.ubicacion.longitud=this.coordinates[0];
    this.mapaService.ubicacion.latitud=this.coordinates[1];
 
+
+  //console.log('exacto: ',this.mapaService.getPlace());
+  this.obtenerLugar();
  }
  
+ obtenerLugar(){
+
+   this.mapaService.getPlace().subscribe(
+    data=>{
+      //this.products=data;
+      console.log('lugar obtenido de la url: ',data);
+    
+    })
+}
+
+
 
 
 }
