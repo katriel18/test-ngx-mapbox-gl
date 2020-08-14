@@ -1,0 +1,39 @@
+<mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[14.5]" [center]="[-77.1502506,-11.8748527]" [maxBounds]="[[-81.594163,-18.733253], [-68.608323, 0.479432]]">
+
+
+    <!-- Punto inicial y final-->
+    <!--
+    <div *ngIf="ver">
+        <div *ngFor="let i of this.puntos">
+            <mgl-marker [lngLat]="[i.location[0],i.location[1]]">
+
+            </mgl-marker>
+
+        </div>
+
+    </div>
+-->
+
+    <!-- Puntos especificos-->
+    <div *ngIf="ver">
+        <div *ngFor="let i of this.puntosTotales">
+            <!-- <mgl-marker [lngLat]="[i.maneuver.location[0],i.maneuver.location[1]]"> -->
+            <mgl-marker [lngLat]="[i.location[0],i.location[1]]">
+            </mgl-marker>
+
+        </div>
+
+    </div>
+
+    <mgl-control mglFullscreen position="bottom-right"></mgl-control>
+    <mgl-control mglNavigation position="bottom-right"></mgl-control>
+
+
+
+
+
+</mgl-map>
+
+<button (click)="obtenerPuntos()">Ver</button>
+
+<button (click)="cerrar()">Cerrar ruta</button>

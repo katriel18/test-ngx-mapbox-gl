@@ -14,6 +14,7 @@ import { MapaVisualComponent } from './maps/mapa-visual/mapa-visual.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { MapaRutaComponent } from './maps/mapa-ruta/mapa-ruta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MapaEmpresaComponent,
     MapaComponent,
     EmpresaComponent,
-    MapaVisualComponent
+    MapaVisualComponent,
+    MapaRutaComponent
   ],
   imports: [
     BrowserModule,
